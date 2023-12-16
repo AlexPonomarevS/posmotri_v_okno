@@ -294,6 +294,11 @@ input[type="checkbox"]:checked + span {
   outline-offset: -3px;
 }
 
+.more-button:focus-visible {
+  outline: solid 1px #fff;
+  outline-offset: -3px;
+}
+
 .content__card-link:focus {
   outline: solid 1px #fff;
   outline-offset: 1px;
