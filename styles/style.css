@@ -5,7 +5,8 @@
 }
 
 html {
-  block-size: 100%;
+  /* block-size: 100%; */
+  height: 800px;
 }
 
 .page {
@@ -58,6 +59,7 @@ ol {
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .search-form {
@@ -71,7 +73,7 @@ ol {
 }
 
 .title {
-  font-family: Oswald;
+  font-family: "Oswald", sans-serif;
   color: #fff;
   font-size: 75px;
   font-style: normal;
@@ -89,8 +91,11 @@ ol {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
   position: relative;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .content__list::-webkit-scrollbar {
@@ -117,7 +122,7 @@ ol {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: "Oswald", sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 100%;
@@ -133,6 +138,7 @@ ol {
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
+  object-position: center;
 }
 
 .visually-hidden {
@@ -162,9 +168,9 @@ ol {
 .search-form__textfield {
   width: 225px;
   height: 27px;
+  color: #fff;
   appearance: none;
   cursor: text;
-  color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
   border: 0;
   border-bottom: solid 1px #fff;
@@ -174,6 +180,10 @@ ol {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.search-form__textfield::placeholder{
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-form__checkbox {
@@ -204,7 +214,7 @@ ol {
   background-color: #1b1919;
   color: #fff;
   text-align: center;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -240,7 +250,7 @@ input[type="checkbox"]:checked + span {
   text-decoration: underline;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover .search-form__label-text{
   text-decoration: underline;
 }
 
@@ -269,12 +279,7 @@ input[type="checkbox"]:checked + span {
   outline-offset: 2px;
 }
 
-.search-form__label:focus {
-  outline: solid 1px #fff;
-  outline-offset: 2px;
-}
-
-.search-form__label:focus-visible {
+.search-form__label:focus-within {
   outline: solid 1px #fff;
   outline-offset: 2px;
 }
@@ -303,3 +308,10 @@ input[type="checkbox"]:checked + span {
   outline: solid 1px #fff;
   outline-offset: 1px;
 }
+
+.search-form__label .search-form__checkbox:focus + .search-form__label{
+  outline: solid 1px #fff;
+  outline-offset: 2px;
+}
+
+
